@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu – AYLALLA FOODS AND PASTRIES</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ========== Header / Navigation ========== -->
+  <header>
+    <div class="header-container">
+      <a class="logo" href="../index.html">AYLALLA<span>.</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="pages/menu.html" class="active">Menu</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/order-online.html">Order Online</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu drawer -->
+    <div class="mobile-menu" role="navigation" aria-label="Main navigation">
+      <button class="close-btn" aria-label="Close menu">&times;</button>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="pages/menu.html">Menu</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/order-online.html">Order Online</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Category Tabs ========== -->
+  <section class="category-tabs">
+    <button onclick="filterByCategory('all')" class="active">All</button>
+    <button onclick="filterByCategory('pastries')">Pastries</button>
+    <button onclick="filterByCategory('cakes')">Cakes</button>
+    <button onclick="filterByCategory('bread')">Bread</button>
+    <button onclick="filterByCategory('drinks')">Drinks</button>
+  </section>
+
+  <!-- ========== Search Box ========== -->
+  <section class="search-bar" style="max-width:1200px; margin:2rem auto; padding:0 1rem;">
+    <form>
+      <label for="search-input" class="sr-only">Search menu items</label>
+      <input type="text" id="search-input" placeholder="Search pastries, cakes, bread, drinks...">
+    </form>
+  </section>
+
+  <!-- ========== Products Grid ========== -->
+  <section class="products" id="menu-products">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:1rem;">Our Offerings</h2>
+      <div class="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a class="logo" href="../index.html">AYLALLA<span>.</span></a>
+        <p>Handcrafted pastries and baked goods since 1995.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="pages/menu.html">Menu</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/gallery.html">Gallery</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>123 Gourmet Street, Foodville</p>
+        <p>Phone: (555) 123‑4567</p>
+        <p>Email: info@ayalallafoods.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <script>document.write(new Date().getFullYear())</script> AYLALLA FOODS AND PASTRIES. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ========== JavaScript ========== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+</html>

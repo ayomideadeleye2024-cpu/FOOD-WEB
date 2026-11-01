@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery – AYLALLA FOODS AND PASTRIES</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ========== Header / Navigation ========== -->
+  <header>
+    <div class="header-container">
+      <a class="logo" href="../index.html">AYLALLA<span>.</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="pages/menu.html">Menu</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/gallery.html" class="active">Gallery</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/order-online.html">Order Online</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu drawer -->
+    <div class="mobile-menu" role="navigation" aria-label="Main navigation">
+      <button class="close-btn" aria-label="Close menu">&times;</button>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="pages/menu.html">Menu</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/order-online.html">Order Online</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Gallery Grid ========== -->
+  <section class="gallery" style="padding:4rem 1rem; max-width:1200px; margin:0 auto;">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:2rem;">Photo Gallery</h2>
+      <div class="gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1557406869-403b34e6d54e')">
+          <img src="https://images.unsplash.com/photo-1557406869-403b34e6d54e" alt="Fresh croissant on a wooden board" loading="lazy">
+          <div class="gallery-caption">Fresh Croissant</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1571803965331-4828f4a14a26')">
+          <img src="https://images.unsplash.com/photo-1571803965331-4828f4a14a26" alt="Assorted pastries on a marble table" loading="lazy">
+          <div class="gallery-caption">Assorted Pastries</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1512679473500-d986797x7000')">
+          <img src="https://images.unsplash.com/photo-1512679473500-d986797x7000" alt="Chocolate cake with berries" loading="lazy">
+          <div class="gallery-caption">Chocolate Cake</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1563962092262-65e0e5c767c9')">
+          <img src="https://images.unsplash.com/photo-1563962092262-65e0e5c767c9" alt="Artisan sourdough loaf" loading="lazy">
+          <div class="gallery-caption">Sourdough Loaf</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1554220186-pmBLjsr22e08')">
+          <img src="https://images.unsplash.com/photo-1554220186-pmBLjsr22e08" alt="Colorful macarons" loading="lazy">
+          <div class="gallery-caption">Macarons</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1513853412303-f6e70de6c85a')">
+          <img src="https://images.unsplash.com/photo-1513853412303-f6e70de6c85a" alt="Cozy cafe interior" loading="lazy">
+          <div class="gallery-caption">Cafe Interior</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Lightbox (modal) ========== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt=" enlarged image">
+  </div>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a class="logo" href="../index.html">AYLALLA<span>.</span></a>
+        <p>Handcrafted pastries and baked goods since 1995.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="pages/menu.html">Menu</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/gallery.html">Gallery</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>123 Gourmet Street, Foodville</p>
+        <p>Phone: (555) 123‑4567</p>
+        <p>Email: info@ayalallafoods.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <script>document.write(new Date().getFullYear())</script> AYLALLA FOODS AND PASTRIES. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ========== JavaScript ========== -->
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lightbox.classList.add('open');
+    }
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('open');
+    }
+    // close on ESC key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>

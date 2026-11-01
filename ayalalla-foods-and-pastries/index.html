@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYLALLA FOODS AND PASTRIES</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== Header / Navigation ========== -->
+  <header>
+    <div class="header-container">
+      <a class="logo" href="index.html">AYLALLA<span>.</span></a>
+      <nav class="nav-links">
+        <a href="pages/menu.html">Menu</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/order-online.html">Order Online</a>
+      </nav>
+      <span class="cart-badge" style="margin-left:1rem;background:var(--accent-yellow);color:var(--navy);border-radius:999px;padding:0 0.5rem;font-size:0.75rem;">0</span>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu drawer (same links as desktop) -->
+    <div class="mobile-menu" role="navigation" aria-label="Main navigation">
+      <button class="close-btn" aria-label="Close menu">&times;</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pages/menu.html">Menu</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/order-online.html">Order Online</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Hero Section ========== -->
+  <section class="hero">
+    <div>
+      <h1>AYLALLA FOODS AND PASTRIES</h1>
+      <p>Handcrafted delicacies since 1995. Freshly baked every day.</p>
+      <a href="pages/menu.html" class="cta-button">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- ========== Featured Products ========== -->
+  <section class="products" id="featured">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:1rem;">Featured Products</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1557406869-403b34e6d54e?w=400&h=300&fit=crop" alt="Almond Croissant" loading="lazy">
+          <div class="product-info">
+            <h3>Almond Croissant</h3>
+            <p>Flaky pastry filled with almond cream</p>
+            <p class="price">$4.50</p>
+            <button class="add-to-cart" onclick="cartAdd('croissant', 'Almond Croissant', 4.50); renderCartBadge();">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1571803965331-4828f4a14a26?w=400&h=300&fit=crop" alt="Red Velvet Cake" loading="lazy">
+          <div class="product-info">
+            <h3>Red Velvet Cake</h3>
+            <p>Classic red velvet with cream cheese frosting</p>
+            <p class="price">$5.80</p>
+            <button class="add-to-cart" onclick="cartAdd('red-velvet', 'Red Velvet Cake', 5.80); renderCartBadge();">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">AYLALLA<span>.</span></a>
+        <p>Handcrafted pastries and baked goods since 1995.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/menu.html">Menu</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/gallery.html">Gallery</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>123 Gourmet Street, Foodville</p>
+        <p>Phone: (555) 123‑4567</p>
+        <p>Email: info@ayalallafoods.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <script>document.write(new Date().getFullYear())</script> AYLALLA FOODS AND PASTRIES. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ========== Success Toast ========== -->
+  <div class="success-toast" role="alert" aria-live="polite">
+    Message sent – we’ll reply shortly!
+  </div>
+
+  <!-- ========== Cart Overlay (shared across pages) ========== -->
+  <div class="cart-overlay" role="dialog" aria-label="Shopping cart">
+    <h2>My Cart</h2>
+    <button class="close-btn" aria-label="Close cart">&times;</button>
+    <div class="cart-item-list"></div>
+    <div class="cart-summary">
+      <p>Subtotal: <span class="subtotal">$0.00</span></p>
+      <p>Tax (5%): <span class="tax">$0.00</span></p>
+      <p><strong>Total: <span class="total-amount">$0.00</span></strong></p>
+      <button class="btn-submit" onclick="cartClear(); updateCartSidebar();">Clear Cart</button>
+      <button class="btn-submit" style="background:var(--accent-orange); margin-top:0.5rem;" onclick="checkout();">Checkout</button>
+    </div>
+  </div>
+
+  <!-- ========== JavaScript ========== -->
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>
